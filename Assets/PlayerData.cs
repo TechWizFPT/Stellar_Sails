@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpaceShipController : MonoBehaviour
+public class PlayerData : MonoBehaviour
 {
+    public List<SpaceShipData> data;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,10 +15,5 @@ public class SpaceShipController : MonoBehaviour
     void Update()
     {
         
-    }
-
-    void Movement()
-    {
-
     }
 }
