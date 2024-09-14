@@ -9,7 +9,7 @@ public class GUI_Demo : MonoBehaviour {
 
 	Rect windowRect = new Rect (0, 0, 400, 380);
 	bool toggleTxt = false;
-	string stringToEdit = "Text Label";	
+	string stringToEdit = "partNameUI Label";	
 	string textToEdit = "TextBox:\nHello World\nI've got few lines...";
 	float hSliderValue = 0.0f;
 	float vSliderValue = 0.0f;

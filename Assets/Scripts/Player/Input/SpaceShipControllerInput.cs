@@ -1,20 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpaceShipControllerInput : MonoBehaviour
+public class SpaceShipControllerInput : Singleton<SpaceShipControllerInput>
 {
     [SerializeField] PlayerManager playerManager;
     [SerializeField] SpaceShipController spaceShipController;
+    List<SpaceShipController> spaceShipControllers;
     bool isMove;
     [SerializeField] Vector3 moveDir;
-    private void Awake()
+    Action<SpaceShipController> moveInput;
+    protected override void Awake()
     {
-        playerManager = GetComponent<PlayerManager>();
+        base.Awake();
+
         spaceShipController = GetComponent<SpaceShipController>();
     }
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
 
     }
@@ -24,11 +28,23 @@ public class SpaceShipControllerInput : MonoBehaviour
     {
         MoveInput();
         InteractInput();
+        AttackInput();
+
+        
+    }
+
+    private void OnEnable()
+    {
+
+    }
+
+    private void OnDestroy()
+    {
     }
 
     void MoveInput()
     {
-        if(spaceShipController == null) { return; }
+        if (spaceShipController == null) { return; }
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
             moveDir.x = Input.GetAxisRaw("Horizontal");
@@ -44,16 +60,25 @@ public class SpaceShipControllerInput : MonoBehaviour
             {
                 isMove = false;
                 moveDir = Vector3.zero;
-                spaceShipController.SpaceShipMove?.Invoke(playerManager,moveDir.normalized);
+                spaceShipController.SpaceShipMove?.Invoke(playerManager, moveDir.normalized);
             }
         }
     }
 
     void InteractInput()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             spaceShipController.SpaceShipInteract?.Invoke(playerManager);
+
+        }
+    }
+
+    void AttackInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            spaceShipController.SpaceShipAttack?.Invoke(playerManager);
 
         }
     }

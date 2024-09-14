@@ -3,7 +3,7 @@
 
 public interface IInteracable 
 {
-   public void Interact();
+   public void Interact(SpaceShipController controller);
 
    
 }

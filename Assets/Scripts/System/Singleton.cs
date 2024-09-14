@@ -57,26 +57,7 @@ public abstract class Singleton<T> : MonoBehaviour where T : Component
 
     protected virtual void Start()
     {
-        bool hasSystemScene = false;
-
-        for (int i = 0; i < SceneManager.sceneCount; i++)
-        {
-            if (SceneManager.GetSceneAt(i).name == MySceneManager.SceneIndex.SystemScene.ToString())
-            {
-                hasSystemScene = true;
-                break;
-            }
-        }
-
-        if (!hasSystemScene)
-        {
-            MySceneManager.Instance.LoadSystemSceneAsync(LoadSystemSceneCallback);
-        }
-        else
-        {
-            Scene targetScene = SceneManager.GetSceneByName(MySceneManager.SceneIndex.SystemScene.ToString());
-            SceneManager.MoveGameObjectToScene(this.gameObject, targetScene);
-        }
+        HasSystemScene();
 
     }
 
@@ -85,6 +66,30 @@ public abstract class Singleton<T> : MonoBehaviour where T : Component
         //Scene targetScene = SceneManager.GetSceneByName(MySceneManager.SceneIndex.SystemScene.ToString());
         //SceneManager.MoveGameObjectToScene(this.gameObject, targetScene);
         Debug.Log("Load System Scene Callback");
+    }
+
+    void HasSystemScene()
+    {
+        //bool hasSystemScene = false;
+
+        //for (int i = 0; i < SceneManager.sceneCount; i++)
+        //{
+        //    if (SceneManager.GetSceneAt(i).name == MySceneManager.SceneIndex.SystemScene.ToString())
+        //    {
+        //        hasSystemScene = true;
+        //        break;
+        //    }
+        //}
+
+        //if (!hasSystemScene)
+        //{
+        //    MySceneManager.Instance.LoadSystemSceneAsync(LoadSystemSceneCallback);
+        //}
+        //else
+        //{
+        //    Scene targetScene = SceneManager.GetSceneByName(MySceneManager.SceneIndex.SystemScene.ToString());
+        //    SceneManager.MoveGameObjectToScene(this.gameObject, targetScene);
+        //}
     }
 
     private void OnDestroy()

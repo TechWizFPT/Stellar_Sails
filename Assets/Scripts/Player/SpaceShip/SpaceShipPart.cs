@@ -4,6 +4,9 @@ using UnityEngine;
 
 public abstract class SpaceShipPart : MonoBehaviour
 {
+    public SpaceShipPartData spaceShipPartData;
+    public string partName;
+    public int currentLv;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +17,18 @@ public abstract class SpaceShipPart : MonoBehaviour
     void Update()
     {
         
+    }
+
+
+    public virtual void Upgrade()
+    {
+        if(currentLv >= spaceShipPartData.partInfo.Count) { return; }
+        Debug.Log("Upgrade Part " + spaceShipPartData.partName);
+        currentLv++;
+    }
+
+    public virtual void Active()
+    {
+
     }
 }
