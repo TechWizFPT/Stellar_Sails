@@ -9,18 +9,21 @@ public class Planet_UI : MonoBehaviour
 
     private void Awake()
     {
-        //UI_Observer.Instance.InteracWithPlane += Active;
+        UI_Observer.Instance.InteracWithPlanet += Active;
     }
 
     private void OnEnable()
     {
-        UI_Observer.Instance.InteracWithPlane += Active;
-
+        //UI_Observer.Instance.InteracWithPlanet += Active;
+        UI_Observer.Instance.InteracWithPlanet -= Active;
+        UI_Observer.Instance.InteracWithPlanet += Unactive;
     }
 
     private void OnDisable()
     {
-        UI_Observer.Instance.InteracWithPlane -= Active;
+        //UI_Observer.Instance.InteracWithPlanet -= Active;
+        UI_Observer.Instance.InteracWithPlanet += Active;
+        UI_Observer.Instance.InteracWithPlanet -= Unactive;
 
     }
     // Start is called before the first frame update
@@ -41,5 +44,10 @@ public class Planet_UI : MonoBehaviour
         planet = _planet;
         Debug.Log("Active UI");
         gameObject.SetActive(true);
+    }
+
+    void Unactive(SpaceShipController player, Planet _planet)
+    {
+        gameObject.SetActive(false);
     }
 }

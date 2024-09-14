@@ -6,7 +6,7 @@ using UnityEngine;
 public class UI_Observer : Singleton<UI_Observer>
 {
 
-    public Action<SpaceShipController, Planet> InteracWithPlane;
+    public Action<SpaceShipController, Planet> InteracWithPlanet;
 
     public Action<SpaceShipController> ShowUpgradeSpaceShipUI;
     public Action<SpaceShipPart> ShowPartInfo;
@@ -23,7 +23,7 @@ public class UI_Observer : Singleton<UI_Observer>
 
     private void OnDestroy()
     {
-        InteracWithPlane = null;
+        InteracWithPlanet = null;
         ShowUpgradeSpaceShipUI = null;
     }
 

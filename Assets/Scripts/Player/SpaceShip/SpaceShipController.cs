@@ -99,7 +99,7 @@ public class SpaceShipController : MonoBehaviour
     public void InteractedWithPlaneCallBack(SpaceShipController controller ,Planet plane)
     {
         if (controller != this) { return; }
-        UI_Observer.Instance.InteracWithPlane?.Invoke(this,plane);
+        UI_Observer.Instance.InteracWithPlanet?.Invoke(this,plane);
 
     }
 
@@ -120,7 +120,7 @@ public class SpaceShipController : MonoBehaviour
         {
             interacObject = null;
             //Debug.Log("Remove Interact Obj");
-
+            
         }
     }
 }
