@@ -1088,6 +1088,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1641665947}
+  - component: {fileID: 1641665948}
   m_Layer: 0
   m_Name: Inventory
   m_TagString: Untagged
@@ -1110,6 +1111,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1641665948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641665946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6462955f2697f574491ee707f51d240c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemList: []
+  InventoryUI: {fileID: 1721643205}
 --- !u!1 &1721643200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,6 +1136,7 @@ GameObject:
   - component: {fileID: 1721643201}
   - component: {fileID: 1721643204}
   - component: {fileID: 1721643203}
+  - component: {fileID: 1721643205}
   m_Layer: 5
   m_Name: InventoryUI
   m_TagString: Untagged
@@ -1187,6 +1203,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1721643200}
   m_CullTransparentMesh: 1
+--- !u!114 &1721643205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721643200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 326598b2f61bfab4aa303dfae8cb8757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseItemSlotPrefab: {fileID: 6080583340358899930, guid: 814a76768908c76479cd94ea1d048a49, type: 3}
+  panel: {fileID: 1078551216}
 --- !u!1 &1980351900
 GameObject:
   m_ObjectHideFlags: 0
