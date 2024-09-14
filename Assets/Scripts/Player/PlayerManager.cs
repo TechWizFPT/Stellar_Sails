@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    [SerializeField] PlayerData playerData;
+    private void Awake()
+    {
+        
+    }
     // Start is called before the first frame update
     void Start()
     {
