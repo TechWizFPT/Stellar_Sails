@@ -11,7 +11,7 @@ public class Planet_UI : MonoBehaviour
 
     private void Awake()
     {
-        UI_Observer.Instance.InteracWithPlane += Active;
+        UI_Observer.Instance.InteracWithPlanet += Active;
         test += TestActive;
     }
 
@@ -30,7 +30,7 @@ public class Planet_UI : MonoBehaviour
 
     private void OnDestroy()
     {
-        UI_Observer.Instance.InteracWithPlane -= Active;
+        UI_Observer.Instance.InteracWithPlanet -= Active;
         test = null;
 
     }
@@ -62,4 +62,9 @@ public class Planet_UI : MonoBehaviour
         Debug.Log("Active UI");
         gameObject.SetActive(true);
     }
+
+    //void Unactive(SpaceShipController player, Planet _planet)
+    //{
+    //    gameObject.SetActive(false);
+    //}
 }
