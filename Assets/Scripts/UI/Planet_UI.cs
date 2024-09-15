@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,21 +7,31 @@ public class Planet_UI : MonoBehaviour
 {
     [SerializeField] SpaceShipController spaceShipController;
     [SerializeField] Planet planet;
+    Action test;
 
     private void Awake()
     {
-        //UI_Observer.Instance.InteracWithPlane += Active;
+        UI_Observer.Instance.InteracWithPlane += Active;
+        test += TestActive;
     }
 
     private void OnEnable()
     {
-        UI_Observer.Instance.InteracWithPlane += Active;
+        //UI_Observer.Instance.InteracWithPlane += Active;
+
+        //UI_Observer.Instance.InteracWithPlane += Active;
 
     }
 
     private void OnDisable()
     {
+
+    }
+
+    private void OnDestroy()
+    {
         UI_Observer.Instance.InteracWithPlane -= Active;
+        test = null;
 
     }
     // Start is called before the first frame update
@@ -32,7 +43,16 @@ public class Planet_UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.T)) {
+            Debug.Log("TTTTT");
+            test?.Invoke();
+        }
+    }
+
+    void TestActive()
+    {
+        Debug.Log("Active UI");
+        gameObject.SetActive(true);
     }
 
     void Active(SpaceShipController player,Planet _planet)

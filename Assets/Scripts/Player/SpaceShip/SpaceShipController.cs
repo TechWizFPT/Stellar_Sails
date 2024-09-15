@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class SpaceShipController : MonoBehaviour
@@ -18,6 +19,9 @@ public class SpaceShipController : MonoBehaviour
     {
         status = GetComponent<SpaceShipStatus>();
         //spaceShipGun = GetComponent<SpaceShipGun>();
+        SpaceShipMove += Movement;
+        SpaceShipAttack += Attack;
+        SpaceShipInteract += Interact;
     }
     // Start is called before the first frame update
     void Start()
@@ -30,11 +34,11 @@ public class SpaceShipController : MonoBehaviour
 
 
     }
+
+    
     private void OnEnable()
     {
-        SpaceShipMove += Movement;
-        SpaceShipAttack += Attack;
-        SpaceShipInteract += Interact;
+        
 
        
     }
@@ -42,6 +46,11 @@ public class SpaceShipController : MonoBehaviour
     private void OnDisable()
     {
 
+       
+    }
+
+    private void OnDestroy()
+    {
         SpaceShipMove -= Movement;
         SpaceShipAttack -= Attack;
         SpaceShipInteract -= Interact;
@@ -99,6 +108,7 @@ public class SpaceShipController : MonoBehaviour
     public void InteractedWithPlaneCallBack(SpaceShipController controller ,Planet plane)
     {
         if (controller != this) { return; }
+        Debug.Log("arararar");
         UI_Observer.Instance.InteracWithPlane?.Invoke(this,plane);
 
     }
