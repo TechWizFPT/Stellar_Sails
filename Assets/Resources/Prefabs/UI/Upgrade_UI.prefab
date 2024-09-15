@@ -921,7 +921,7 @@ MonoBehaviour:
   currentShip: {fileID: 0}
   textMeshProUGUI: {fileID: 5310037641283552656}
   partBtnContaint: {fileID: 6600084153717782668}
-  spaceShipPartPrefab: {fileID: 6331981420647536489, guid: b8ca54a67763fed4faabc3e50c2ead85, type: 3}
+  spaceShipPartBtnUIPrefab: {fileID: 6331981420647536489, guid: b8ca54a67763fed4faabc3e50c2ead85, type: 3}
   seletedPart: {fileID: 0}
   AmountPanel: {fileID: 810987079590128568}
   amountText: {fileID: 5527885722176116900}

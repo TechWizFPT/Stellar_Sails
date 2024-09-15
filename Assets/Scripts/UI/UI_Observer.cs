@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class UI_Observer : Singleton<UI_Observer>
 {
-
     public Action<SpaceShipController, Planet> InteracWithPlanet;
 
     public Action<SpaceShipController> ShowUpgradeSpaceShipUI;
@@ -21,15 +20,33 @@ public class UI_Observer : Singleton<UI_Observer>
         base.Start();
     }
 
-    private void OnDestroy()
-    {
-        InteracWithPlanet = null;
-        ShowUpgradeSpaceShipUI = null;
-    }
-
     // Update is called once per frame
     void Update()
     {
+
+    }
+    protected override void OnApplicationQuit()
+    {
+        base.OnApplicationQuit();
+        InteracWithPlanet = null;
+        ShowUpgradeSpaceShipUI = null;
+        ShowPartInfo = null;
+
+    }
+
+    protected override void OnDestroy()
+    {
+        base.OnDestroy();
+        if (Application.isPlaying)
+        {
+            InteracWithPlanet = null;
+            ShowUpgradeSpaceShipUI = null;
+            ShowPartInfo = null;
+        }
         
     }
+
+   
+
+    
 }

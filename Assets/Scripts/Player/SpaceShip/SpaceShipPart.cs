@@ -22,7 +22,7 @@ public abstract class SpaceShipPart : MonoBehaviour
 
     public virtual void Upgrade()
     {
-        if(currentLv >= spaceShipPartData.partInfo.Count) { return; }
+        if(spaceShipPartData.partInfo.Count -1 <= currentLv ) { return; }
         Debug.Log("Upgrade Part " + spaceShipPartData.partName);
         currentLv++;
     }

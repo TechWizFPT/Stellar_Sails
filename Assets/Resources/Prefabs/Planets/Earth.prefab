@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5496478413148998894}
   - component: {fileID: 1174084962578623543}
   m_Layer: 0
-  m_Name: Planet
+  m_Name: Earth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc086a995ed05f441b7898b6cf604477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetData: {fileID: 11400000, guid: a6a0bcfe350843d4b9dc259ea29c2fec, type: 2}
 --- !u!1 &6498504744572834318
 GameObject:
   m_ObjectHideFlags: 0

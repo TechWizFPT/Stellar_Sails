@@ -45,7 +45,7 @@ public class GUI_Demo : MonoBehaviour {
 		vSliderValue = GUI.VerticalSlider (new Rect (140, 50, 20, 200), vSliderValue, 100.0f, 0.0f);
 
 
-		toggleTxt = GUI.Toggle(new Rect(165, 50, 100, 30), toggleTxt, "A Toggle text");
+		toggleTxt = GUI.Toggle(new Rect(165, 50, 100, 30), toggleTxt, "A Toggle info");
 		textToEdit = GUI.TextArea (new Rect (165, 90, 185, 100), textToEdit, 200);
 
 		GUI.Label (new Rect (180, 215, 100, 20), "ScrollView");

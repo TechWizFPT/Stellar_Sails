@@ -17,7 +17,7 @@ public abstract class Singleton<T> : MonoBehaviour where T : Component
             {
                 //Scene activeScene = SceneManager.GetActiveScene();
                 //SceneManager.SetActiveScene(SceneManager.GetSceneByName("SystemScene"));
-                
+                if (!Application.isPlaying) { return null; }
                 GameObject obj = new GameObject();
                 obj.name = typeof(T).Name;
                 _instance = obj.AddComponent<T>();
@@ -35,14 +35,14 @@ public abstract class Singleton<T> : MonoBehaviour where T : Component
     protected virtual void Awake()
     {
         //Tranh bug khi ham duoc goi o unit editor
-        if(!Application.isPlaying) { return; }
+        if (!Application.isPlaying) { return; }
 
-        
+
 
         if (_instance == null)
         {
             _instance = this as T;
-           
+
             //DontDestroyOnLoad(gameObject);
 
         }
@@ -92,8 +92,19 @@ public abstract class Singleton<T> : MonoBehaviour where T : Component
         //}
     }
 
-    private void OnDestroy()
-    {
+    protected virtual void OnApplicationQuit()
+    {            
         _instance = null;
     }
+
+    protected virtual void OnDestroy()
+    {
+        if (Application.isPlaying)
+        {
+            _instance = null;
+
+        }
+    }
+
+
 }

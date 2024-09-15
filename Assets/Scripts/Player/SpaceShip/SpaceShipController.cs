@@ -34,7 +34,6 @@ public class SpaceShipController : MonoBehaviour
 
 
     }
-
     
     private void OnEnable()
     {
@@ -51,10 +50,12 @@ public class SpaceShipController : MonoBehaviour
 
     private void OnDestroy()
     {
-        SpaceShipMove -= Movement;
-        SpaceShipAttack -= Attack;
-        SpaceShipInteract -= Interact;
-
+        if (Application.isPlaying)
+        {
+            SpaceShipMove -= Movement;
+            SpaceShipAttack -= Attack;
+            SpaceShipInteract -= Interact;
+        }        
     }
 
     // Update is called once per frame

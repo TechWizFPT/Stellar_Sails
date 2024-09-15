@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SpaceShipPartBtn : MonoBehaviour
+public class SpaceShipPartBtn_UI : MonoBehaviour
 {
     [SerializeField] SpaceShipPart part;
     [SerializeField] Button button;

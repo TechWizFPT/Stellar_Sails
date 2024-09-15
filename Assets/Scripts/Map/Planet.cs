@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Planet : MonoBehaviour ,IInteracable
 {
+    public PlanetData planetData;
     public void Interact(SpaceShipController controller)
     {
         Debug.Log("Interact Plane");

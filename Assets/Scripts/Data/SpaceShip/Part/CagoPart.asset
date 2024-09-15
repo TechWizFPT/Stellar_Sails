@@ -15,12 +15,18 @@ MonoBehaviour:
   partType: 1
   partName: Cago_1
   partInfo:
-  - damage: 5
-    attackTime: 1
-    amount: 5
-  - damage: 10
-    attackTime: 0.5
-    amount: 20
   - damage: 0
     attackTime: 0
     amount: 0
+    slot: 10
+    moveSpeed: 0
+  - damage: 0
+    attackTime: 0
+    amount: 0
+    slot: 20
+    moveSpeed: 0
+  - damage: 0
+    attackTime: 0
+    amount: 0
+    slot: 40
+    moveSpeed: 0

@@ -10,6 +10,10 @@ public struct ShipPart
     public int damage;
     public float attackTime;
     public int amount;
+
+    public int slot;
+
+    public float moveSpeed;
 }
 
 [CreateAssetMenu(fileName = "New part", menuName = "ScriptableObject/SpaceShipPart", order = 0)]
